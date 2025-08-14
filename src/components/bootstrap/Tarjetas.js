@@ -7,12 +7,11 @@ export const Tarjetas = ({ delito }) => {
   }
 
   return (
-    <div className="card w-auto p-3 text-bg-secondary p-3" style={{ width: '18rem', margin: '1rem' }}>
+    <div className="card w-auto p-3 text-bg-secondary p-3" style={{ width: '18rem', maxWidth: '18rem', margin: '1rem' }}>
       <div className="card-header">
         <h3>{delito.tipo || "Sin tipo"}</h3>
       </div>
       <div className="card-body">
-        <h5 className="card-text">{delito.descripcion || "Sin descripción"}</h5>
         <p className="card-title">Ubicación: {delito.ubicacion || "Sin ubicación"}</p>
         <p className="card-text"><small className="text-muted">{delito.timestamp ? delito.timestamp.toDate().toLocaleString('es-ES') : "Sin fecha"}</small></p>
 
@@ -21,11 +20,14 @@ export const Tarjetas = ({ delito }) => {
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+    <h3 class="offcanvas-title" id="offcanvasRightLabel">Detalles</h3>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    ...
+    <p>Tipo: {delito.tipo || "Sin tipo"}</p>
+    <p>Descripción: {delito.descripcion || "Sin descripción"}</p>
+    <p>Ubicación: {delito.ubicacion || "Sin ubicación"}</p>
+    <p>Fecha: {delito.timestamp ? delito.timestamp.toDate().toLocaleString('es-ES') : "Sin fecha"}</p>
   </div>
 </div>
       </div>

@@ -9,16 +9,21 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: auto;
-  overflow: hidden;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  overflow: hidden; /* Evita el scroll en el body */
 }
 
 .LateralIzquierdo {
-  background-color: rgb(49, 49, 49);
+  background-color: #252B33;
   width: 30%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 30px; 
+}
+
+.Usuario{
+  background-color: #20242A;
+  height: 110vh;
 }
 
 .boton-menu{
@@ -37,38 +42,53 @@ body {
 }
 
 .Centro {
-  background-color: rgb(26, 26, 26);
-  width: 100%;
-  height: 100vh;
+  background-color: #20242A;
+  width: 50%;
+  height: auto;
+}
+
+.delito-item {
+  background-color: #252B33;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgb(77, 77, 77);
+  margin: 2% 0;
   overflow-y: auto;
+  flex-grow: 1; /* Hace que este contenedor crezca para llenar el espacio */
+  min-height: 0; /* Necesario para que el overflow funcione en un contenedor flex */
   /* --- Estilos para Firefox --- */
   scrollbar-width: thin;
   scrollbar-color: rgb(85, 85, 85) rgb(26, 26, 26);
 }
 
-.delito-item {
-  background-color: rgb(73, 73, 73);
-  padding: 12px 16px;
-  border-bottom: 1px solid rgb(77, 77, 77);
-  margin: 2% 2%;
-  border-radius: 20px;
-}
-
 .LateralDerecho {
-  background-color: rgb(49, 49, 49);
-  width: 40%;
+  background-color: #252B33;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.Emergencia {
+  width: 100%;
+  height: 50%;
+  background-color: #252B33;
+  padding: 12px 16px;
+}
+.Estadisticas {
+  width: 100%;
+  height: 50%;
+  background-color: #252B33;
+  padding: 12px 16px;
 }
 
 /* --- Estilos para navegadores WebKit (Chrome, Safari, Edge, etc.) --- */
-.Centro::-webkit-scrollbar {
+.delito-item::-webkit-scrollbar {
   width: 8px; /* Ancho de la barra de scroll vertical */
 }
 
-.Centro::-webkit-scrollbar-track {
+.delito-item::-webkit-scrollbar-track {
   background: rgb(26, 26, 26); /* Color de la pista (el fondo de la barra) */
 }
 
-.Centro::-webkit-scrollbar-thumb {
+.delito-item::-webkit-scrollbar-thumb {
   background-color: rgb(85, 85, 85); /* Color del pulgar (la parte móvil) */
   border-radius: 20px; /* Bordes redondeados */
   border: 2px solid rgb(26, 26, 26); /* Crea un espacio alrededor del pulgar */
